@@ -1,114 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#1a1a1a',
+                        'dark-card': '#2a2a2a',
+                        'dark-border': '#3a3a3a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-sans overflow-hidden">
+    <div class="flex h-screen">
+        <!-- Left Sidebar -->
+        <div class="w-20 bg-dark-bg border-r border-dark-border flex flex-col items-center py-4 space-y-6 flex-shrink-0">
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-8 h-8 bg-gray-600 rounded flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                </div>
+                <span class="text-xs text-gray-400">HOME</span>
+            </div>
+            
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-8 h-8 bg-gray-600 rounded flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <span class="text-xs text-gray-400">HISTORY</span>
+            </div>
+            
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-8 h-8 bg-gray-600 rounded flex items-center justify-center">
+                    <span class="text-sm">💬</span>
+                </div>
+                <span class="text-xs text-gray-400">1:1</span>
+            </div>
+            
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-8 h-8 bg-gray-600 rounded flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <span class="text-xs text-gray-400">LEADER BOARD</span>
+            </div>
+            
+            <div class="mt-auto space-y-4">
+                <button class="w-16 py-2 bg-green-600 text-white text-xs rounded">DEPOSIT</button>
+                <button class="w-16 py-2 bg-red-600 text-white text-xs rounded">WITHDRAW</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col min-w-0">
+            <!-- Top Number Grid -->
+            <div class="bg-dark-bg p-4 border-b border-dark-border">
+                <div class="flex flex-wrap gap-1 max-w-full">
+                    <!-- Row 1 -->
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">5</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">0</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">7</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">8</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">9</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">0</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    
+                    <!-- Row 2 -->
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">7</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">7</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">0</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">7</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">0</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">8</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    
+                    <!-- Row 3 -->
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">5</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">7</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">0</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">9</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">9</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">6</div>
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">9</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">7</div>
+                </div>
+            </div>
+
+            <!-- Main Trading Area -->
+            <div class="flex-1 flex min-h-0">
+                <!-- Chart Area -->
+                <div class="flex-1 bg-dark-bg p-4 min-w-0">
+                   
 <!-- TradingView Widget BEGIN: Advanced Chart (default) -->
 <div id="mode-0" class="tradingview-widget-container" style="height: 100%; width: 100%">
-  <div
-    class="tradingview-widget-container__widget"
-    style="height: calc(100% - 32px); width: 100%"
-  ></div>
-  <script
-    type="text/javascript"
-    src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
-    async
-  >
-      {
-      "allow_symbol_change": true,
-      "calendar": false,
-      "details": false,
-      "hide_side_toolbar": true,
-      "hide_top_toolbar": true,
-      "hide_legend": true,
-      "hide_volume": false,
-      "hotlist": false,
-      "interval": "D",
-      "locale": "en",
-      "save_image": false,
-      "style": "1",
-      "symbol": "BINANCE:BTCUSDT",
-      "theme": "dark",
-      "timezone": "Etc/UTC",
-      "backgroundColor": "#0F0F0F",
-      "gridColor": "rgba(242, 242, 242, 0.06)",
-      "watchlist": [],
-      "withdateranges": true,
-      "compareSymbols": [],
-      "studies": [],
-      "autosize": true
-    }
-  </script>
-</div>
+    <div
+      class="tradingview-widget-container__widget"
+      style="height: calc(100% - 32px); width: 100%"
+    ></div>
+    <script
+      type="text/javascript"
+      src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
+      async
+    >
+        {
+        "allow_symbol_change": true,
+        "calendar": false,
+        "details": false,
+        "hide_side_toolbar": true,
+        "hide_top_toolbar": true,
+        "hide_legend": true,
+        "hide_volume": false,
+        "hotlist": false,
+        "interval": "D",
+        "locale": "en",
+        "save_image": false,
+        "style": "1",
+        "symbol": "BINANCE:BTCUSDT",
+        "theme": "dark",
+        "timezone": "Etc/UTC",
+        "backgroundColor": "#0F0F0F",
+        "gridColor": "rgba(242, 242, 242, 0.06)",
+        "watchlist": [],
+        "withdateranges": true,
+        "compareSymbols": [],
+        "studies": [],
+        "autosize": true
+      }
+    </script>
+  </div>
+  
+  <!-- TradingView Widget BEGIN: Symbol Overview (type=1) -->
+  <div id="mode-1" class="tradingview-widget-container" style="height: 100%; width: 100%; display: none;">
+    <div
+      class="tradingview-widget-container__widget"
+      style="height: 100%; width: 100%"
+    ></div>
+    <script
+      type="text/javascript"
+      src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
+      async
+    >
+        {
+        "lineWidth": 2,
+        "lineType": 0,
+        "chartType": "area",
+        "fontColor": "rgb(106, 109, 120)",
+        "gridLineColor": "rgba(242, 242, 242, 0.06)",
+        "volumeUpColor": "rgba(34, 171, 148, 0.5)",
+        "volumeDownColor": "rgba(247, 82, 95, 0.5)",
+        "backgroundColor": "#0F0F0F",
+        "widgetFontColor": "#DBDBDB",
+        "upColor": "#22ab94",
+        "downColor": "#f7525f",
+        "borderUpColor": "#22ab94",
+        "borderDownColor": "#f7525f",
+        "wickUpColor": "#22ab94",
+        "wickDownColor": "#f7525f",
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "locale": "en",
+        "chartOnly": false,
+        "scalePosition": "right",
+        "scaleMode": "Normal",
+        "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+        "valuesTracking": "1",
+        "changeMode": "price-and-percent",
+        "symbols": [
+          [
+            "BINANCE:BTCUSDT|1D"
+          ]
+        ],
+        "dateRanges": [
+          "1d|1",
+          "1m|30",
+          "3m|60",
+          "12m|1D",
+          "60m|1W",
+          "all|1M"
+        ],
+        "fontSize": "10",
+        "headerFontSize": "medium",
+        "autosize": true,
+        "lineColor": "rgba(219, 219, 219, 1)",
+        "width": "100%",
+        "height": "100%",
+        "noTimeScale": false,
+        "hideDateRanges": false,
+        "hideMarketStatus": false,
+        "hideSymbolLogo": false
+      }
+    </script>
+  </div>
+  
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var typeParam = params.get('type');
+      var isSymbolOverview = typeParam === '1';
+      var adv = document.getElementById('mode-0');
+      var overview = document.getElementById('mode-1');
+      if (adv && overview) {
+        adv.style.display = isSymbolOverview ? 'none' : 'block';
+        overview.style.display = isSymbolOverview ? 'block' : 'none';
+      }
+    })();
+    </script>
+  
+                </div>
 
-<!-- TradingView Widget BEGIN: Symbol Overview (type=1) -->
-<div id="mode-1" class="tradingview-widget-container" style="height: 100%; width: 100%; display: none;">
-  <div
-    class="tradingview-widget-container__widget"
-    style="height: 100%; width: 100%"
-  ></div>
-  <script
-    type="text/javascript"
-    src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
-    async
-  >
-      {
-      "lineWidth": 2,
-      "lineType": 0,
-      "chartType": "area",
-      "fontColor": "rgb(106, 109, 120)",
-      "gridLineColor": "rgba(242, 242, 242, 0.06)",
-      "volumeUpColor": "rgba(34, 171, 148, 0.5)",
-      "volumeDownColor": "rgba(247, 82, 95, 0.5)",
-      "backgroundColor": "#0F0F0F",
-      "widgetFontColor": "#DBDBDB",
-      "upColor": "#22ab94",
-      "downColor": "#f7525f",
-      "borderUpColor": "#22ab94",
-      "borderDownColor": "#f7525f",
-      "wickUpColor": "#22ab94",
-      "wickDownColor": "#f7525f",
-      "colorTheme": "dark",
-      "isTransparent": false,
-      "locale": "en",
-      "chartOnly": false,
-      "scalePosition": "right",
-      "scaleMode": "Normal",
-      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
-      "valuesTracking": "1",
-      "changeMode": "price-and-percent",
-      "symbols": [
-        [
-          "BINANCE:BTCUSDT|1D"
-        ]
-      ],
-      "dateRanges": [
-        "1d|1",
-        "1m|30",
-        "3m|60",
-        "12m|1D",
-        "60m|1W",
-        "all|1M"
-      ],
-      "fontSize": "10",
-      "headerFontSize": "medium",
-      "autosize": true,
-      "lineColor": "rgba(219, 219, 219, 1)",
-      "width": "100%",
-      "height": "100%",
-      "noTimeScale": false,
-      "hideDateRanges": false,
-      "hideMarketStatus": false,
-      "hideSymbolLogo": false
-    }
-  </script>
-</div>
+                <!-- Right Panel -->
+                <div class="w-80 bg-dark-bg border-l border-dark-border p-4 space-y-4 flex-shrink-0">
+                    <!-- Amount Input -->
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Amount</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">$</span>
+                            <input type="text" class="w-full bg-dark-card border border-yellow-500 rounded px-8 py-2 text-white" placeholder="0">
+                            <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-500">$</span>
+                        </div>
+                    </div>
 
-<script>
-  (function () {
-    var params = new URLSearchParams(window.location.search);
-    var typeParam = params.get('type');
-    var isSymbolOverview = typeParam === '1';
-    var adv = document.getElementById('mode-0');
-    var overview = document.getElementById('mode-1');
-    if (adv && overview) {
-      adv.style.display = isSymbolOverview ? 'none' : 'block';
-      overview.style.display = isSymbolOverview ? 'block' : 'none';
-    }
-  })();
-  </script>
+                    <!-- Higher/Lower Buttons -->
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="bg-green-500 hover:bg-green-600 text-white py-3 rounded font-semibold flex items-center justify-center space-x-2">
+                            <span>📈</span>
+                            <span>Higher</span>
+                        </button>
+                        <button class="bg-red-500 hover:bg-red-600 text-white py-3 rounded font-semibold flex items-center justify-center space-x-2">
+                            <span>📉</span>
+                            <span>Low</span>
+                        </button>
+                    </div>
+
+                    <!-- Period Betting -->
+                    <div class="bg-dark-card rounded p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-blue-400">💧 Period Betting</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <div>
+                                <div class="text-yellow-400">1 Min 44</div>
+                            </div>
+                            <div>
+                                <div class="text-blue-400">3 Min 104</div>
+                            </div>
+                        </div>
+                        <div class="mt-2 text-xs text-gray-400">
+                            <div>Open 2025-08-20 16:51 Round 1012</div>
+                        </div>
+                        <div class="mt-4 text-center text-gray-400 text-sm">
+                            No investment records found.
+                        </div>
+                    </div>
+
+                    <!-- Bingo Number Bet -->
+                    <div class="bg-dark-card rounded p-4">
+                        <div class="text-blue-400 mb-4">Bingo Number Bet 44</div>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="space-y-2">
+                                <div class="text-2xl font-bold">0</div>
+                                <div class="text-2xl font-bold">2</div>
+                                <div class="text-2xl font-bold">4</div>
+                                <div class="text-2xl font-bold">6</div>
+                                <div class="text-2xl font-bold">8</div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-2xl font-bold">1</div>
+                                <div class="text-2xl font-bold">3</div>
+                                <div class="text-2xl font-bold">5</div>
+                                <div class="text-2xl font-bold">7</div>
+                                <div class="text-2xl font-bold">9</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Options -->
+                    <div class="flex justify-between">
+                        <button class="bg-green-500 text-white px-3 py-1 rounded text-xs">1USD</button>
+                        <button class="bg-gray-600 text-white px-3 py-1 rounded text-xs">5USD</button>
+                        <button class="bg-gray-600 text-white px-3 py-1 rounded text-xs">10USD</button>
+                        <button class="bg-gray-600 text-white px-3 py-1 rounded text-xs">50USD</button>
+                        <button class="bg-gray-600 text-white px-3 py-1 rounded text-xs">100USD</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
